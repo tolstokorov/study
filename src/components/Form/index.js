@@ -2,7 +2,11 @@ import React from 'react';
 
 const Form = (props) => {
     return (
-        <p>Form</p>
+        <>
+            <div style= {{ textAlign: 'center' }}>
+                <p>Form</p>
+            </div>
+        </>
     );
 };
 

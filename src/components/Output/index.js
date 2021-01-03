@@ -7,17 +7,23 @@ const Output = (props) => {
     const todosCopy = [...props.todos];
     const arr = reverse ? todosCopy.reverse() : todosCopy;
     return (
-        <ol className={ style.list } reversed={ reverse }>
-            {
-                arr.map((item, index) => {
-                    return (
-                        <li key={ index } className={ style.item }>
-                            { item }
-                        </li>
-                    );
-                })
-            }
-        </ol>
+        <>
+            <small
+                className={ style.center + ' ' + style['output-text']}
+            >Click on an item to remove it</small>
+            
+            <ol className={ style.list } reversed={ reverse }>
+                {
+                    arr.map((item, index) => {
+                        return (
+                            <li key={ index } className={ style.item }>
+                                { item }
+                            </li>
+                        );
+                    })
+                }
+            </ol>
+        </>
     );
 };
 

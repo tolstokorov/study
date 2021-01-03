@@ -3,21 +3,19 @@ import Form from '../Form';
 import Output from '../Output';
 import style from './index.module.css';
 
-function App (props) {
+function App () {
     return (
         <>
             <hr/>
-            
+
             <h1 className={ style.center }>To Do List</h1>
 
             <hr/>
 
-            <div className={ style.center }>
-                <Form />
-            </div>
+            <Form />
 
             <hr/>
-
+            
             <Output />
 
             <hr/>
