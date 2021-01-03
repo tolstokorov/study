@@ -28,7 +28,13 @@ const Form = (props) => {
                                 } }
                             />
                         </label>
-                        <button className={ style.btn } >Add</button>
+                        <button
+                            className={ style.btn }
+                            onClick={ () => {
+                                console.dir(inputRef);
+                                inputRef.current.focus();
+                            } }
+                        >Add</button>
                     </div>
                     <p><label>
                         <input
