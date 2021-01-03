@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import style from './index.module.css';
+import { removeItem } from '../../redux/reducers/toDoList/actions/actionCreators'
 
 const Output = (props) => {
     const reverse = false; // props.reverse;
@@ -16,7 +17,13 @@ const Output = (props) => {
                 {
                     arr.map((item, index) => {
                         return (
-                            <li key={ index } className={ style.item }>
+                            <li
+                                key={ index }
+                                className={ style.item }
+                                onClick={ () => {
+                                    props.removeItem(index)
+                                } }
+                            >
                                 { item }
                             </li>
                         );
@@ -34,4 +41,8 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Output);
+const mapDispatchToProps =  {
+    removeItem
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Output);
