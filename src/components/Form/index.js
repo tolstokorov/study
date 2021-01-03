@@ -30,13 +30,15 @@ const Form = (props) => {
                         </label>
                         <button>Add</button>
                     </div>
-                    <p><input
-                        type="checkbox"
-                        value={ props.isRreverse }
-                        onChange={ () => {
-                            props.reverse();
-                        } }
-                    /></p>
+                    <p><label>
+                        <input
+                            type="checkbox"
+                            value={ props.isRreverse }
+                            onChange={ () => {
+                                props.reverse();
+                            } }
+                        /> <span>Reverse</span>
+                    </label></p>
                 </form>
             </div>
         </>
