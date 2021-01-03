@@ -4,7 +4,7 @@ import style from './index.module.css';
 import { removeItem } from '../../redux/reducers/toDoList/actions/actionCreators'
 
 const Output = (props) => {
-    const reverse = false; // props.reverse;
+    const reverse = props.isReverse;
     const todosCopy = [...props.todos];
     const arr = reverse ? todosCopy.reverse() : todosCopy;
     return (
@@ -37,7 +37,7 @@ const Output = (props) => {
 const mapStateToProps = (state) => {
     return {
         todos: state.toDoList.todos,
-        reverse: state.toDoList.reverse
+        isReverse: state.toDoList.isReverse
     };
 };
 

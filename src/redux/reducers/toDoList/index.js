@@ -7,7 +7,7 @@ const initialState = {
         'TypeScript'
     ],
     placeholder: 'Get a job!',
-    reverse: false
+    isReverse: false
 };
 
 const toDoList = (state = initialState, action) => {
@@ -22,7 +22,7 @@ const toDoList = (state = initialState, action) => {
             stateCopy.todos.splice(action.index, 1);
             return stateCopy;
         case REVERSE:
-            stateCopy.reverse = !stateCopy.reverse;
+            stateCopy.isReverse = !stateCopy.isReverse;
             return stateCopy;
         default:
             return state;

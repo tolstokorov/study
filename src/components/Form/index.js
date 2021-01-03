@@ -30,7 +30,13 @@ const Form = (props) => {
                         </label>
                         <button>Add</button>
                     </div>
-                    <p><input type="checkbox" /></p>
+                    <p><input
+                        type="checkbox"
+                        value={ props.isRreverse }
+                        onChange={ () => {
+                            props.reverse();
+                        } }
+                    /></p>
                 </form>
             </div>
         </>
@@ -39,7 +45,8 @@ const Form = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        placeholder: state.toDoList.placeholder
+        placeholder: state.toDoList.placeholder,
+        isReverse: state.toDoList.isReverse
     };
 };
 const mapDispatchToProps = {
