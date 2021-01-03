@@ -4,16 +4,16 @@ import style from './index.module.css';
 import { removeItem } from '../../redux/reducers/toDoList/actions/actionCreators'
 
 const Output = (props) => {
-    const reverse = props.isReverse;
+    const isReverse = props.isReverse;
     const todosCopy = [...props.todos];
-    const arr = reverse ? todosCopy.reverse() : todosCopy;
+    const arr = isReverse ? todosCopy.reverse() : todosCopy;
     return (
         <>
             <small
                 className={ style.center + ' ' + style['output-text']}
             >Click on an item to remove it</small>
             
-            <ol className={ style.list } reversed={ reverse }>
+            <ol className={ style.list } reversed={ isReverse }>
                 {
                     arr.map((item, index) => {
                         return (
@@ -21,7 +21,7 @@ const Output = (props) => {
                                 key={ index }
                                 className={ style.item }
                                 onClick={ () => {
-                                    props.removeItem(index)
+                                    props.removeItem(isReverse ? (arr.length - 1 - index) : index)
                                 } }
                             >
                                 { item }
