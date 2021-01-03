@@ -13,8 +13,10 @@ const Form = (props) => {
             <div className={ style.wrapper }>
                 <form onSubmit={ e => {
                     e.preventDefault();
-                    props.addItem(inputValue);
-                    setInputValue('');
+                    if(inputValue) {
+                        props.addItem(inputValue);
+                        setInputValue('');
+                    }
                 } } >
                     <div>
                         <label>
