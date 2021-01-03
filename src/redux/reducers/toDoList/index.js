@@ -11,7 +11,9 @@ const initialState = {
 };
 
 const toDoList = (state = initialState, action) => {
-    let stateCopy = { ...state };
+    const stateCopy = { ...state };
+    stateCopy.todos = [...state.todos];
+    
     switch (action.type) {
         case ADD_ITEM:
             stateCopy.todos.push(action.text);
