@@ -28,7 +28,7 @@ const Form = (props) => {
                                 } }
                             />
                         </label>
-                        <button>Add</button>
+                        <button className={ style.btn } >Add</button>
                     </div>
                     <p><label>
                         <input
