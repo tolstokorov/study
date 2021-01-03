@@ -1,21 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { addItem, removeItem, reverse } from '../../redux/reducers/toDoList/actions/actionCreators';
+import Form from '../Form';
+import Output from '../Output';
+import style from './index.module.css';
 
 function App (props) {
     return (
-        <center>{ props.state.todos.join(' ') }</center>
+        <>
+            <hr/>
+            
+            <h1 className={ style.center }>To Do List</h1>
+
+            <hr/>
+
+            <div className={ style.center }>
+                <Form />
+            </div>
+
+            <hr/>
+
+            <Output />
+
+            <hr/>
+        </>
     );
 }
 
-const mapStateToProps = (state) => {
-    return { state: state.toDoList };
-};
-
-const mapDispatchToProps = {
-    addItem,
-    removeItem,
-    reverse
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

@@ -1,0 +1,19 @@
+.list {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.item {
+    box-sizing: border-box;
+    max-width: 80vw;
+
+    word-break: break-all;
+}
